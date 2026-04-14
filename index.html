@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,18 +13,52 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        .tab-content { display: none; }
-        .tab-content.active { display: block; animation: fadeIn 0.4s ease-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .tab-btn.active { 
-            border-bottom: 3px solid #004a99; 
-            color: #004a99; 
-            background-color: rgba(239, 246, 255, 0.7); 
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
         }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .stat-card:hover { transform: translateY(-4px); transition: all 0.3s ease; }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .tab-btn.active {
+            border-bottom: 3px solid #004a99;
+            color: #004a99;
+            background-color: rgba(239, 246, 255, 0.7);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            transition: all 0.3s ease;
+        }
 
         /* KPI horizontal scroll en móvil */
         .kpi-scroll-wrapper {
@@ -34,8 +69,15 @@
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
         }
-        .kpi-scroll-wrapper::-webkit-scrollbar { display: none; }
-        .kpi-scroll-wrapper { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .kpi-scroll-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        .kpi-scroll-wrapper {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
 
         .kpi-card {
             flex: 0 0 72vw;
@@ -51,6 +93,7 @@
                 overflow-x: visible;
                 scroll-snap-type: none;
             }
+
             .kpi-card {
                 flex: unset;
                 max-width: unset;
@@ -64,83 +107,111 @@
         }
     </style>
 </head>
+
 <body class="bg-slate-50 text-slate-900 pb-12">
 
     <!-- Header Principal -->
-    <header class="bg-[#004a99] text-white p-8 shadow-lg border-b-4 border-red-600 sticky top-0 z-30">
+    <header class="bg-[#004a99] text-white p-4 md:p-8 shadow-lg border-b-4 border-red-600 sticky top-0 z-30">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+
             <div class="text-center md:text-left">
-                <div class="flex items-center justify-center md:justify-start space-x-3 mb-2">
+
+                <div class="flex items-center justify-center md:justify-start space-x-2 md:space-x-3 mb-2">
                     <div class="p-1 rounded shadow-sm">
-                        <img src="./img/LogoEjecuta_v4.png" alt="Logo ejecuta" class="max-h-12 object-contain">
-                    </div>
-      
-                </div>
-                <h1 class="text-3xl font-black tracking-tight uppercase">Informe Ejecutivo de Cierre</h1>
-                <p class="text-blue-100 mt-1 text-lg font-medium">Farmacia, Cafetería y Consultorios - Bloque A Stella Maris</p>
-            </div>
-            <div class="mt-6 md:mt-0 flex space-x-4">
-                <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 text-center shadow-inner">
-                    <p class="text-[10px] opacity-70 uppercase font-black tracking-widest mb-1 text-white">Status Operativo</p>
-                    <div class="flex items-center text-green-400 font-black text-sm">
-                        <i data-lucide="check-circle" class="w-4 h-4 mr-1"></i> ENTREGADO 100%
+                        <img src="./img/LogoEjecuta_v4.png" alt="Logo ejecuta"
+                            class="max-h-8 md:max-h-12 object-contain">
                     </div>
                 </div>
+
+                <h1 class="text-lg md:text-3xl font-black tracking-tight uppercase">
+                    Informe Ejecutivo de Cierre
+                </h1>
+
+                <p class="text-xs md:text-lg text-blue-100 mt-1 font-medium">
+                    Farmacia, Cafetería y Consultorios - Bloque A Stella Maris
+                </p>
             </div>
+
+            <div class="mt-3 md:mt-6 flex space-x-2 md:space-x-4">
+                <div
+                    class="bg-white/10 backdrop-blur-md p-2 md:p-4 rounded-xl md:rounded-2xl border border-white/20 text-center shadow-inner">
+                    <p
+                        class="text-[8px] md:text-[10px] opacity-70 uppercase font-black tracking-widest mb-1 text-white">
+                        Status Operativo
+                    </p>
+                    <div class="flex items-center text-green-400 font-black text-xs md:text-sm">
+                        <i data-lucide="check-circle" class="w-3 h-3 md:w-4 md:h-4 mr-1"></i> ENTREGADO 100%
+                    </div>
+                </div>
+            </div>
+
         </div>
     </header>
 
     <!-- Navegación Estratégica -->
-    <nav class="bg-white border-b sticky top-[132px] z-20 shadow-sm overflow-hidden">
+    <nav class="bg-white border-b sticky top-[90px] md:top-[132px] z-20 shadow-sm overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 flex overflow-x-auto no-scrollbar" id="tab-navigation">
-            <button onclick="showTab('resumen')" class="tab-btn active py-5 px-8 border-b-2 border-transparent transition-all flex items-center space-x-2 font-black text-xs uppercase tracking-widest text-slate-400 hover:text-slate-600">
+            <button onclick="showTab('resumen')"
+                class="tab-btn active py-5 px-8 border-b-2 border-transparent transition-all flex items-center space-x-2 font-black text-xs uppercase tracking-widest text-slate-400 hover:text-slate-600">
                 <i data-lucide="layout" class="w-4 h-4"></i><span>Resumen Ejecutivo</span>
             </button>
-            <button onclick="showTab('produccion')" class="tab-btn py-5 px-8 border-b-2 border-transparent transition-all flex items-center space-x-2 font-black text-xs uppercase tracking-widest text-slate-400 hover:text-slate-600">
+            <button onclick="showTab('produccion')"
+                class="tab-btn py-5 px-8 border-b-2 border-transparent transition-all flex items-center space-x-2 font-black text-xs uppercase tracking-widest text-slate-400 hover:text-slate-600">
                 <i data-lucide="trending-up" class="w-4 h-4"></i><span>Producción & Curva S</span>
             </button>
-            <button onclick="showTab('ingenieria')" class="tab-btn py-5 px-8 border-b-2 border-transparent transition-all flex items-center space-x-2 font-black text-xs uppercase tracking-widest text-slate-400 hover:text-slate-600">
+            <button onclick="showTab('ingenieria')"
+                class="tab-btn py-5 px-8 border-b-2 border-transparent transition-all flex items-center space-x-2 font-black text-xs uppercase tracking-widest text-slate-400 hover:text-slate-600">
                 <i data-lucide="zap" class="w-4 h-4"></i><span>Ingeniería & Carga</span>
             </button>
-            <button onclick="showTab('calidad')" class="tab-btn py-5 px-8 border-b-2 border-transparent transition-all flex items-center space-x-2 font-black text-xs uppercase tracking-widest text-slate-400 hover:text-slate-600">
+            <button onclick="showTab('calidad')"
+                class="tab-btn py-5 px-8 border-b-2 border-transparent transition-all flex items-center space-x-2 font-black text-xs uppercase tracking-widest text-slate-400 hover:text-slate-600">
                 <i data-lucide="shield-check" class="w-4 h-4"></i><span>Calidad & TOP</span>
             </button>
-            <button onclick="showTab('financiero')" class="tab-btn py-5 px-8 border-b-2 border-transparent transition-all flex items-center space-x-2 font-black text-xs uppercase tracking-widest text-slate-400 hover:text-slate-600">
+            <button onclick="showTab('financiero')"
+                class="tab-btn py-5 px-8 border-b-2 border-transparent transition-all flex items-center space-x-2 font-black text-xs uppercase tracking-widest text-slate-400 hover:text-slate-600">
                 <i data-lucide="dollar-sign" class="w-4 h-4"></i><span>Cierre Financiero</span>
             </button>
         </div>
     </nav>
 
     <main class="max-w-7xl mx-auto p-6 lg:p-10">
-        
+
         <!-- Tarjetas de Impacto (KPIs) -->
         <div class="kpi-scroll-wrapper mb-12">
-            <div class="kpi-card stat-card bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-start space-x-4">
-                <div class="p-3 rounded-xl bg-blue-600 text-white shadow-md shadow-blue-200"><i data-lucide="calendar"></i></div>
+            <div
+                class="kpi-card stat-card bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-start space-x-4">
+                <div class="p-3 rounded-xl bg-blue-600 text-white shadow-md shadow-blue-200"><i
+                        data-lucide="calendar"></i></div>
                 <div>
                     <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Ejecución</p>
                     <h3 class="text-xl font-black text-slate-800">30 Días</h3>
                     <p class="text-[10px] text-slate-500 mt-1 font-bold italic">100% On-Time</p>
                 </div>
             </div>
-            <div class="kpi-card stat-card bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-start space-x-4">
-                <div class="p-3 rounded-xl bg-orange-500 text-white shadow-md shadow-orange-200"><i data-lucide="hard-hat"></i></div>
+            <div
+                class="kpi-card stat-card bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-start space-x-4">
+                <div class="p-3 rounded-xl bg-orange-500 text-white shadow-md shadow-orange-200"><i
+                        data-lucide="hard-hat"></i></div>
                 <div>
                     <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Seguridad</p>
                     <h3 class="text-xl font-black text-slate-800">0 Accidentes</h3>
                     <p class="text-[10px] text-slate-500 mt-1 font-bold italic">Día y Noche (2 Turnos)</p>
                 </div>
             </div>
-            <div class="kpi-card stat-card bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-start space-x-4">
-                <div class="p-3 rounded-xl bg-green-600 text-white shadow-md shadow-green-200"><i data-lucide="award"></i></div>
+            <div
+                class="kpi-card stat-card bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-start space-x-4">
+                <div class="p-3 rounded-xl bg-green-600 text-white shadow-md shadow-green-200"><i
+                        data-lucide="award"></i></div>
                 <div>
                     <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Garantía</p>
                     <h3 class="text-xl font-black text-slate-800">24 Meses</h3>
                     <p class="text-[10px] text-slate-500 mt-1 font-bold italic">Post-Venta Activa</p>
                 </div>
             </div>
-            <div class="kpi-card stat-card bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-start space-x-4">
-                <div class="p-3 rounded-xl bg-indigo-600 text-white shadow-md shadow-indigo-200"><i data-lucide="activity"></i></div>
+            <div
+                class="kpi-card stat-card bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-start space-x-4">
+                <div class="p-3 rounded-xl bg-indigo-600 text-white shadow-md shadow-indigo-200"><i
+                        data-lucide="activity"></i></div>
                 <div>
                     <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Metrología</p>
                     <h3 class="text-xl font-black text-slate-800">INACAL Cert.</h3>
@@ -159,69 +230,87 @@
                         </h2>
                         <div class="prose prose-slate max-w-none text-slate-600 text-base leading-relaxed">
                             <p>
-                                Bajo la <strong>Orden de Servicio OCL2602-260230055</strong>, EJECUTA CONSTRUCCIÓN S.A.C. implementó la reestructuración eléctrica integral del Bloque A. Este hito permitió la operatividad de las nuevas áreas de Farmacia y Cafetería, así como la integración de carga crítica para el nuevo <strong>Resonador Magnético (Resocentro)</strong>.
+                                Bajo la <strong>Orden de Servicio OCL2602-260230055</strong>, EJECUTA CONSTRUCCIÓN
+                                S.A.C. implementó la reestructuración eléctrica integral del Bloque A. Este hito
+                                permitió la operatividad de las nuevas áreas de Farmacia y Cafetería, así como la
+                                integración de carga crítica para el nuevo <strong>Resonador Magnético
+                                    (Resocentro)</strong>.
                             </p>
                             <p class="mt-4">
-                                Se trabajó bajo un régimen de <strong>doble turno</strong>, garantizando que el hospital mantuviera su energía viva en áreas críticas durante toda la intervención.
+                                Se trabajó bajo un régimen de <strong>doble turno</strong>, garantizando que el hospital
+                                mantuviera su energía viva en áreas críticas durante toda la intervención.
                             </p>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-                            <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100 flex items-start shadow-inner">
+                            <div
+                                class="p-5 bg-slate-50 rounded-2xl border border-slate-100 flex items-start shadow-inner">
                                 <i data-lucide="cpu" class="w-6 h-6 text-blue-600 mr-4 mt-1"></i>
                                 <div>
                                     <p class="font-black text-slate-800">Normalización de Tableros</p>
-                                    <p class="text-xs text-slate-500 mt-1">Suministro e instalación de TNA-PS.1, TEA-PS.1 y TESTA-PS.1 en Sótano.</p>
+                                    <p class="text-xs text-slate-500 mt-1">Suministro e instalación de TNA-PS.1,
+                                        TEA-PS.1 y TESTA-PS.1 en Sótano.</p>
                                 </div>
                             </div>
-                            <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100 flex items-start shadow-inner">
+                            <div
+                                class="p-5 bg-slate-50 rounded-2xl border border-slate-100 flex items-start shadow-inner">
                                 <i data-lucide="map" class="w-6 h-6 text-blue-600 mr-4 mt-1"></i>
                                 <div>
                                     <p class="font-black text-slate-800">Ingeniería As-Built</p>
-                                    <p class="text-xs text-slate-500 mt-1">Levantamiento de 08 láminas técnicas con diagramas unifilares finales.</p>
+                                    <p class="text-xs text-slate-500 mt-1">Levantamiento de 08 láminas técnicas con
+                                        diagramas unifilares finales.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
-                        <h2 class="text-2xl font-black mb-8 text-slate-800 uppercase tracking-tighter">Transferencia & Cierre Operativo</h2>
+                        <h2 class="text-2xl font-black mb-8 text-slate-800 uppercase tracking-tighter">Transferencia &
+                            Cierre Operativo</h2>
                         <div class="space-y-4">
-                            <div class="flex items-center justify-between p-6 bg-blue-50/70 rounded-2xl border border-blue-100">
+                            <div
+                                class="flex items-center justify-between p-6 bg-blue-50/70 rounded-2xl border border-blue-100">
                                 <div class="flex items-center">
                                     <div class="bg-blue-600/10 p-3 rounded-xl mr-5">
                                         <i data-lucide="graduation-cap" class="w-8 h-8 text-blue-600"></i>
                                     </div>
                                     <div>
                                         <p class="font-black text-blue-900 text-lg">Capacitación de II.EE.</p>
-                                        <p class="text-sm text-blue-700 font-medium">Capacitación teórica-práctica al Staff de Mantenimiento el 01/04/26.</p>
+                                        <p class="text-sm text-blue-700 font-medium">Capacitación teórica-práctica al
+                                            Staff de Mantenimiento el 01/04/26.</p>
                                     </div>
                                 </div>
-                                <span class="bg-blue-600 text-white text-[10px] font-black px-3 py-1.5 rounded-lg shadow-sm">EJECUTADO</span>
+                                <span
+                                    class="bg-blue-600 text-white text-[10px] font-black px-3 py-1.5 rounded-lg shadow-sm">EJECUTADO</span>
                             </div>
-                            <div class="flex items-center justify-between p-6 bg-green-50/70 rounded-2xl border border-green-100">
+                            <div
+                                class="flex items-center justify-between p-6 bg-green-50/70 rounded-2xl border border-green-100">
                                 <div class="flex items-center">
                                     <div class="bg-green-600/10 p-3 rounded-xl mr-5">
                                         <i data-lucide="package-check" class="w-8 h-8 text-green-600"></i>
                                     </div>
                                     <div>
                                         <p class="font-black text-green-900 text-lg">Devolución de Materiales</p>
-                                        <p class="text-sm text-green-700 font-medium">Retiro y entrega formal de conductores y tableros antiguos (26/03/26).</p>
+                                        <p class="text-sm text-green-700 font-medium">Retiro y entrega formal de
+                                            conductores y tableros antiguos (26/03/26).</p>
                                     </div>
                                 </div>
-                                <span class="bg-green-600 text-white text-[10px] font-black px-3 py-1.5 rounded-lg shadow-sm">CONCLUIDO</span>
+                                <span
+                                    class="bg-green-600 text-white text-[10px] font-black px-3 py-1.5 rounded-lg shadow-sm">CONCLUIDO</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="space-y-6">
                     <div class="bg-[#1e293b] p-8 rounded-3xl shadow-2xl text-white relative overflow-hidden">
-                        <div class="absolute -right-4 -bottom-4 opacity-5"><i data-lucide="award" class="w-48 h-48"></i></div>
+                        <div class="absolute -right-4 -bottom-4 opacity-5"><i data-lucide="award" class="w-48 h-48"></i>
+                        </div>
                         <h3 class="text-xl font-black mb-6 flex items-center border-b border-slate-700 pb-4">
                             <i data-lucide="clipboard-check" class="w-6 h-6 mr-3 text-blue-400"></i> DOSSIER EJECUTIVO
                         </h3>
                         <div class="space-y-5">
                             <div class="flex justify-between items-center text-sm">
                                 <span class="text-slate-400 font-medium">Acta de Recepción</span>
-                                <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-[10px] font-black tracking-widest uppercase">Firmada</span>
+                                <span
+                                    class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-[10px] font-black tracking-widest uppercase">Firmada</span>
                             </div>
                             <div class="flex justify-between items-center text-sm">
                                 <span class="text-slate-400 font-medium">Planos As-Built</span>
@@ -237,18 +326,21 @@
                             </div>
                         </div>
                         <div class="mt-10 pt-8 border-t border-slate-700/50">
-                            <p class="text-[11px] font-bold italic text-slate-400 leading-relaxed text-center">"Concretamos confianza mediante ingeniería de precisión y cumplimiento normativo."</p>
+                            <p class="text-[11px] font-bold italic text-slate-400 leading-relaxed text-center">
+                                "Concretamos confianza mediante ingeniería de precisión y cumplimiento normativo."</p>
                         </div>
                     </div>
-                    
+
                     <!-- Imagen de Soporte (Mantenimiento) -->
                     <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200">
-                        <div class="bg-slate-100 aspect-video flex items-center justify-center text-slate-400 text-sm italic">
+                        <div
+                            class="bg-slate-100 aspect-video flex items-center justify-center text-slate-400 text-sm italic">
                             [Imagen de Capacitación en Tableros]
                         </div>
                         <div class="p-4 bg-slate-50">
                             <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Evidencia</p>
-                            <p class="text-xs font-bold text-slate-700 mt-1 italic">Personal de EJECUTA realizando la transferencia técnica a Mantenimiento Stella Maris.</p>
+                            <p class="text-xs font-bold text-slate-700 mt-1 italic">Personal de EJECUTA realizando la
+                                transferencia técnica a Mantenimiento Stella Maris.</p>
                         </div>
                     </div>
                 </div>
@@ -261,13 +353,16 @@
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
                     <div>
                         <h2 class="text-3xl font-black text-slate-800 tracking-tighter">CURVA S DE PRODUCCIÓN</h2>
-                        <p class="text-base text-slate-500 font-medium mt-1">Monitoreo semanal del cumplimiento físico vs cronograma base.</p>
+                        <p class="text-base text-slate-500 font-medium mt-1">Monitoreo semanal del cumplimiento físico
+                            vs cronograma base.</p>
                     </div>
                     <div class="mt-6 md:mt-0 flex flex-wrap gap-4">
-                        <div class="flex items-center text-xs font-black text-slate-700 bg-slate-50 px-3 py-2 rounded-xl border border-slate-200">
+                        <div
+                            class="flex items-center text-xs font-black text-slate-700 bg-slate-50 px-3 py-2 rounded-xl border border-slate-200">
                             <div class="w-3 h-3 bg-blue-600 rounded-full mr-2"></div> AVANCE REAL
                         </div>
-                        <div class="flex items-center text-xs font-black text-slate-400 bg-slate-50 px-3 py-2 rounded-xl border border-slate-200">
+                        <div
+                            class="flex items-center text-xs font-black text-slate-400 bg-slate-50 px-3 py-2 rounded-xl border border-slate-200">
                             <div class="w-3 h-3 bg-red-400 rounded-full mr-2"></div> PROYECTADO
                         </div>
                     </div>
@@ -277,7 +372,8 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
                     <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100 text-center shadow-inner">
-                        <p class="text-xs font-black text-slate-400 uppercase mb-3 tracking-widest">Semana Crítica (3)</p>
+                        <p class="text-xs font-black text-slate-400 uppercase mb-3 tracking-widest">Semana Crítica (3)
+                        </p>
                         <p class="text-3xl font-black text-blue-600">91% Avance</p>
                         <p class="text-[10px] text-slate-500 mt-2 font-bold italic">Aceleración por Doble Turno</p>
                     </div>
@@ -289,7 +385,8 @@
                     <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100 text-center shadow-inner">
                         <p class="text-xs font-black text-slate-400 uppercase mb-3 tracking-widest">Desviación</p>
                         <p class="text-3xl font-black text-green-600">0.0%</p>
-                        <p class="text-[10px] text-slate-500 mt-2 font-bold italic">Finalización en Plazo Contractual</p>
+                        <p class="text-[10px] text-slate-500 mt-2 font-bold italic">Finalización en Plazo Contractual
+                        </p>
                     </div>
                 </div>
             </div>
@@ -299,9 +396,10 @@
         <div id="ingenieria" class="tab-content space-y-10">
             <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-200">
                 <h2 class="text-2xl font-black mb-12 text-slate-800 flex items-center">
-                    <i data-lucide="zap" class="w-7 h-7 text-yellow-500 mr-4"></i> ANÁLISIS DE CARGA INSTALADA (MÁXIMA DEMANDA)
+                    <i data-lucide="zap" class="w-7 h-7 text-yellow-500 mr-4"></i> ANÁLISIS DE CARGA INSTALADA (MÁXIMA
+                    DEMANDA)
                 </h2>
-                
+
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <div class="h-[400px]">
                         <canvas id="cargaChart"></canvas>
@@ -310,14 +408,18 @@
                         <div class="p-8 bg-blue-50/50 rounded-3xl border border-blue-100 relative shadow-inner">
                             <h4 class="font-black text-[#004a99] mb-4 text-lg">OPTIMIZACIÓN DE SUBESTACIÓN</h4>
                             <p class="text-base text-slate-600 mb-8 leading-relaxed">
-                                La ingeniería de <strong>EJECUTA</strong> logró integrar una nueva demanda de <strong>150.85 kW</strong> (Sistema Normal) sin comprometer la estabilidad del transformador de 1,600 KVA. Se ha normalizado la carga del Resocentro y las nuevas áreas de Farmacia Central.
+                                La ingeniería de <strong>EJECUTA</strong> logró integrar una nueva demanda de
+                                <strong>150.85 kW</strong> (Sistema Normal) sin comprometer la estabilidad del
+                                transformador de 1,600 KVA. Se ha normalizado la carga del Resocentro y las nuevas áreas
+                                de Farmacia Central.
                             </p>
                             <div class="flex items-center p-5 bg-white rounded-2xl shadow-sm border border-blue-200">
                                 <div class="bg-yellow-400 p-3 rounded-xl mr-5 shadow-lg shadow-yellow-200 text-white">
                                     <i data-lucide="power" class="w-6 h-6"></i>
                                 </div>
                                 <div>
-                                    <p class="text-[11px] font-black text-slate-400 uppercase tracking-widest">Factor de Reserva</p>
+                                    <p class="text-[11px] font-black text-slate-400 uppercase tracking-widest">Factor de
+                                        Reserva</p>
                                     <p class="text-2xl font-black text-slate-800">25% OPERATIVO</p>
                                 </div>
                             </div>
@@ -366,12 +468,14 @@
                 <div class="lg:col-span-2 space-y-6">
                     <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-200">
                         <h2 class="text-2xl font-black mb-10 text-slate-800 flex items-center">
-                            <i data-lucide="check-square" class="w-7 h-7 text-indigo-600 mr-4"></i> CONTROL DOCUMENTARIO (TOP)
+                            <i data-lucide="check-square" class="w-7 h-7 text-indigo-600 mr-4"></i> CONTROL DOCUMENTARIO
+                            (TOP)
                         </h2>
                         <div class="space-y-8">
                             <div>
                                 <div class="flex justify-between items-center mb-3">
-                                    <span class="text-sm font-black text-slate-600 uppercase tracking-tight">Fichas Técnicas Homologadas</span>
+                                    <span class="text-sm font-black text-slate-600 uppercase tracking-tight">Fichas
+                                        Técnicas Homologadas</span>
                                     <span class="text-xs font-black text-slate-400 italic">26 Documentos</span>
                                 </div>
                                 <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden shadow-inner">
@@ -380,7 +484,8 @@
                             </div>
                             <div>
                                 <div class="flex justify-between items-center mb-3">
-                                    <span class="text-sm font-black text-slate-600 uppercase tracking-tight">Protocolos de Megado & Operatividad</span>
+                                    <span class="text-sm font-black text-slate-600 uppercase tracking-tight">Protocolos
+                                        de Megado & Operatividad</span>
                                     <span class="text-xs font-black text-slate-400 italic">22 Documentos</span>
                                 </div>
                                 <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden shadow-inner">
@@ -389,7 +494,8 @@
                             </div>
                             <div>
                                 <div class="flex justify-between items-center mb-3">
-                                    <span class="text-sm font-black text-slate-600 uppercase tracking-tight">Planos As-Built Digitales & Impresos</span>
+                                    <span class="text-sm font-black text-slate-600 uppercase tracking-tight">Planos
+                                        As-Built Digitales & Impresos</span>
                                     <span class="text-xs font-black text-slate-400 italic">08 Láminas</span>
                                 </div>
                                 <div class="w-full h-3 bg-slate-100 rounded-full overflow-hidden shadow-inner">
@@ -398,33 +504,53 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="bg-indigo-900 p-10 rounded-3xl text-white shadow-2xl relative overflow-hidden">
-                        <div class="absolute -right-8 -top-8 opacity-10"><i data-lucide="shield" class="w-48 h-48"></i></div>
-                        <h4 class="text-xl font-black mb-6 flex items-center"><i data-lucide="alert-triangle" class="w-6 h-6 mr-4 text-indigo-400"></i> TRAZABILIDAD METROLÓGICA</h4>
-                        <p class="text-indigo-200 text-base leading-relaxed mb-6">Todas las mediciones de resistencia de aislamiento y continuidad fueron ejecutadas con instrumental de alta precisión <strong>(AMPROBE AMB-25 y SEW 8010 IN)</strong>. Los equipos cuentan con certificados de calibración emitidos por laboratorios acreditados ante <strong>INACAL</strong>, garantizando valores técnicamente válidos para auditorías ITSE.</p>
+                        <div class="absolute -right-8 -top-8 opacity-10"><i data-lucide="shield" class="w-48 h-48"></i>
+                        </div>
+                        <h4 class="text-xl font-black mb-6 flex items-center"><i data-lucide="alert-triangle"
+                                class="w-6 h-6 mr-4 text-indigo-400"></i> TRAZABILIDAD METROLÓGICA</h4>
+                        <p class="text-indigo-200 text-base leading-relaxed mb-6">Todas las mediciones de resistencia de
+                            aislamiento y continuidad fueron ejecutadas con instrumental de alta precisión
+                            <strong>(AMPROBE AMB-25 y SEW 8010 IN)</strong>. Los equipos cuentan con certificados de
+                            calibración emitidos por laboratorios acreditados ante <strong>INACAL</strong>, garantizando
+                            valores técnicamente válidos para auditorías ITSE.
+                        </p>
                         <div class="flex flex-wrap gap-4 mt-8">
-                            <span class="bg-indigo-800/50 px-4 py-2 rounded-xl text-xs font-black tracking-widest border border-indigo-700">CERT. INACAL #2026-E</span>
-                            <span class="bg-indigo-800/50 px-4 py-2 rounded-xl text-xs font-black tracking-widest border border-indigo-700">ISO 9001 COMPLIANCE</span>
+                            <span
+                                class="bg-indigo-800/50 px-4 py-2 rounded-xl text-xs font-black tracking-widest border border-indigo-700">CERT.
+                                INACAL #2026-E</span>
+                            <span
+                                class="bg-indigo-800/50 px-4 py-2 rounded-xl text-xs font-black tracking-widest border border-indigo-700">ISO
+                                9001 COMPLIANCE</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="space-y-6">
                     <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
-                        <h3 class="font-black text-slate-800 mb-8 uppercase text-xs tracking-widest text-center">Contenido del Dossier</h3>
+                        <h3 class="font-black text-slate-800 mb-8 uppercase text-xs tracking-widest text-center">
+                            Contenido del Dossier</h3>
                         <ul class="space-y-4">
-                            <li class="flex items-center p-4 bg-slate-50 rounded-2xl text-xs font-bold text-slate-700 border border-slate-100 shadow-sm">
-                                <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-4"></i> Memoria Descriptiva & Cálculo
+                            <li
+                                class="flex items-center p-4 bg-slate-50 rounded-2xl text-xs font-bold text-slate-700 border border-slate-100 shadow-sm">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-4"></i> Memoria
+                                Descriptiva & Cálculo
                             </li>
-                            <li class="flex items-center p-4 bg-slate-50 rounded-2xl text-xs font-bold text-slate-700 border border-slate-100 shadow-sm">
-                                <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-4"></i> Certificados de Calidad Materiales
+                            <li
+                                class="flex items-center p-4 bg-slate-50 rounded-2xl text-xs font-bold text-slate-700 border border-slate-100 shadow-sm">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-4"></i> Certificados de
+                                Calidad Materiales
                             </li>
-                            <li class="flex items-center p-4 bg-slate-50 rounded-2xl text-xs font-bold text-slate-700 border border-slate-100 shadow-sm">
-                                <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-4"></i> Registro Fotográfico (3 Fases)
+                            <li
+                                class="flex items-center p-4 bg-slate-50 rounded-2xl text-xs font-bold text-slate-700 border border-slate-100 shadow-sm">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-4"></i> Registro
+                                Fotográfico (3 Fases)
                             </li>
-                            <li class="flex items-center p-4 bg-slate-50 rounded-2xl text-xs font-bold text-slate-700 border border-slate-100 shadow-sm">
-                                <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-4"></i> Manuales de Operación
+                            <li
+                                class="flex items-center p-4 bg-slate-50 rounded-2xl text-xs font-bold text-slate-700 border border-slate-100 shadow-sm">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-4"></i> Manuales de
+                                Operación
                             </li>
                         </ul>
                     </div>
@@ -438,55 +564,71 @@
                 <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-200">
                     <h2 class="text-2xl font-black mb-10 text-slate-800">ESTADO DE VALORIZACIONES</h2>
                     <div class="space-y-6">
-                        <div class="flex items-center justify-between p-6 bg-slate-50 rounded-3xl border border-slate-100">
+                        <div
+                            class="flex items-center justify-between p-6 bg-slate-50 rounded-3xl border border-slate-100">
                             <div>
                                 <p class="font-black text-slate-700 text-lg">Valorización N° 01</p>
-                                <p class="text-xs text-slate-400 font-bold uppercase mt-1 tracking-widest">Emitido: 02/03/2026</p>
+                                <p class="text-xs text-slate-400 font-bold uppercase mt-1 tracking-widest">Emitido:
+                                    02/03/2026</p>
                             </div>
                             <div class="text-right">
                                 <p class="text-2xl font-black text-blue-600">S/ 103,431.08</p>
-                                <span class="text-[9px] font-black px-3 py-1 rounded-lg bg-green-100 text-green-700 uppercase mt-2 inline-block">Liquidado</span>
+                                <span
+                                    class="text-[9px] font-black px-3 py-1 rounded-lg bg-green-100 text-green-700 uppercase mt-2 inline-block">Liquidado</span>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between p-6 bg-slate-50 rounded-3xl border border-slate-100">
+                        <div
+                            class="flex items-center justify-between p-6 bg-slate-50 rounded-3xl border border-slate-100">
                             <div>
                                 <p class="font-black text-slate-700 text-lg">Valorización N° 02</p>
-                                <p class="text-xs text-slate-400 font-bold uppercase mt-1 tracking-widest">Emitido: 26/03/2026</p>
+                                <p class="text-xs text-slate-400 font-bold uppercase mt-1 tracking-widest">Emitido:
+                                    26/03/2026</p>
                             </div>
                             <div class="text-right">
                                 <p class="text-2xl font-black text-blue-600">S/ 47,560.36</p>
-                                <span class="text-[9px] font-black px-3 py-1 rounded-lg bg-green-100 text-green-700 uppercase mt-2 inline-block">Liquidado</span>
+                                <span
+                                    class="text-[9px] font-black px-3 py-1 rounded-lg bg-green-100 text-green-700 uppercase mt-2 inline-block">Liquidado</span>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between p-6 bg-slate-50 rounded-3xl border border-slate-200 border-dashed">
+                        <div
+                            class="flex items-center justify-between p-6 bg-slate-50 rounded-3xl border border-slate-200 border-dashed">
                             <div>
                                 <p class="font-black text-slate-500 text-lg">Retención Técnica (5%)</p>
-                                <p class="text-xs text-slate-400 font-bold uppercase mt-1 tracking-widest italic">Liberación: Sept. 2026</p>
+                                <p class="text-xs text-slate-400 font-bold uppercase mt-1 tracking-widest italic">
+                                    Liberación: Sept. 2026</p>
                             </div>
                             <div class="text-right">
                                 <p class="text-2xl font-black text-orange-600">S/ 7,962.22</p>
-                                <span class="text-[9px] font-black px-3 py-1 rounded-lg bg-orange-100 text-orange-700 uppercase mt-2 inline-block">Fondo Garantía</span>
+                                <span
+                                    class="text-[9px] font-black px-3 py-1 rounded-lg bg-orange-100 text-orange-700 uppercase mt-2 inline-block">Fondo
+                                    Garantía</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="bg-gradient-to-br from-[#004a99] to-blue-900 p-12 rounded-[40px] text-white shadow-2xl relative overflow-hidden">
+
+                <div
+                    class="bg-gradient-to-br from-[#004a99] to-blue-900 p-12 rounded-[40px] text-white shadow-2xl relative overflow-hidden">
                     <div class="absolute bottom-0 right-0 p-4 opacity-5 translate-x-1/4 translate-y-1/4">
                         <i data-lucide="briefcase" class="w-96 h-96"></i>
                     </div>
                     <div class="relative z-10">
                         <h4 class="text-3xl font-black mb-6 uppercase tracking-tight">Resumen Financiero</h4>
                         <p class="text-blue-100 text-lg leading-relaxed mb-10 max-w-lg">
-                            La inversión total ejecutada de <strong>S/ 158,953.66</strong> (IGV inc.) se encuentra liquidada operativamente. La retención del 5% queda como salvaguarda técnica, demostrando la solvencia y confianza de EJECUTA en la calidad del servicio.
+                            La inversión total ejecutada de <strong>S/ 158,953.66</strong> (IGV inc.) se encuentra
+                            liquidada operativamente. La retención del 5% queda como salvaguarda técnica, demostrando la
+                            solvencia y confianza de EJECUTA en la calidad del servicio.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-6">
-                            <div class="flex-1 bg-white/10 p-6 rounded-3xl backdrop-blur-xl border border-white/10 text-center">
-                                <p class="text-[10px] font-black opacity-50 uppercase mb-2 tracking-widest">Avance Financiero</p>
+                            <div
+                                class="flex-1 bg-white/10 p-6 rounded-3xl backdrop-blur-xl border border-white/10 text-center">
+                                <p class="text-[10px] font-black opacity-50 uppercase mb-2 tracking-widest">Avance
+                                    Financiero</p>
                                 <p class="text-4xl font-black">95%</p>
                             </div>
                             <div class="flex-1 bg-red-600 p-6 rounded-3xl text-center shadow-2xl shadow-red-900/30">
-                                <p class="text-[10px] font-black opacity-70 uppercase mb-2 tracking-widest text-white">Retención Obra</p>
+                                <p class="text-[10px] font-black opacity-70 uppercase mb-2 tracking-widest text-white">
+                                    Retención Obra</p>
                                 <p class="text-4xl font-black text-white">5%</p>
                             </div>
                         </div>
@@ -497,12 +639,14 @@
     </main>
 
     <!-- Footer Corporativo -->
-    <footer class="max-w-7xl mx-auto px-10 py-16 border-t mt-20 flex flex-col md:flex-row justify-between items-center gap-10">
+    <footer
+        class="max-w-7xl mx-auto px-10 py-16 border-t mt-20 flex flex-col md:flex-row justify-between items-center gap-10">
         <div class="flex items-center space-x-3 grayscale opacity-40">
             <div class="bg-slate-800 text-white px-3 py-1.5 text-xs font-black rounded-lg italic">EJECUTA</div>
             <span class="text-xs font-black text-slate-400 tracking-widest">© 2026 CONCRETAMOS CONFIANZA</span>
         </div>
-        <div class="flex flex-wrap justify-center gap-8 text-[11px] font-black text-slate-400 uppercase tracking-widest">
+        <div
+            class="flex flex-wrap justify-center gap-8 text-[11px] font-black text-slate-400 uppercase tracking-widest">
             <a href="#" class="hover:text-[#004a99] transition-colors">Normativa CNE-U</a>
             <a href="#" class="hover:text-[#004a99] transition-colors">Certificaciones ISO</a>
             <a href="#" class="hover:text-[#004a99] transition-colors">Protocolos ITSE</a>
@@ -523,7 +667,7 @@
             // Activar seleccionada
             const activeTab = document.getElementById(tabId);
             activeTab.classList.add('active');
-            
+
             // Buscar y marcar botón
             const btns = document.querySelectorAll('.tab-btn');
             btns.forEach(btn => {
@@ -533,7 +677,7 @@
             // Forzar re-renderizado de gráficos si es necesario
             if (tabId === 'produccion') setTimeout(renderCurvaS, 50);
             if (tabId === 'ingenieria') setTimeout(renderCarga, 50);
-            
+
             // Scroll suave hacia arriba del contenido
             window.scrollTo({ top: 180, behavior: 'smooth' });
         }
@@ -584,18 +728,18 @@
                     maintainAspectRatio: false,
                     interaction: { mode: 'index', intersect: false },
                     scales: {
-                        y: { 
-                            beginAtZero: true, 
-                            max: 100, 
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
                             grid: { color: '#f1f5f9' },
                             ticks: { font: { weight: 'bold' }, callback: (v) => v + '%' }
                         },
                         x: { grid: { display: false }, ticks: { font: { weight: 'bold' } } }
                     },
                     plugins: {
-                        legend: { 
-                            position: 'top', 
-                            labels: { usePointStyle: true, font: { size: 12, weight: 'bold' }, padding: 25 } 
+                        legend: {
+                            position: 'top',
+                            labels: { usePointStyle: true, font: { size: 12, weight: 'bold' }, padding: 25 }
                         },
                         tooltip: {
                             backgroundColor: '#1e293b',
@@ -643,16 +787,16 @@
                     responsive: true,
                     maintainAspectRatio: false,
                     scales: {
-                        y: { 
+                        y: {
                             grid: { color: '#f1f5f9' },
                             ticks: { font: { weight: 'bold' }, callback: (v) => v + ' kW' }
                         },
                         x: { grid: { display: false }, ticks: { font: { weight: 'bold' } } }
                     },
                     plugins: {
-                        legend: { 
-                            position: 'top', 
-                            labels: { usePointStyle: true, font: { size: 12, weight: 'bold' }, padding: 25 } 
+                        legend: {
+                            position: 'top',
+                            labels: { usePointStyle: true, font: { size: 12, weight: 'bold' }, padding: 25 }
                         },
                         tooltip: {
                             backgroundColor: '#1e293b',
@@ -666,4 +810,5 @@
         }
     </script>
 </body>
+
 </html>
